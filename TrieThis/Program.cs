@@ -75,6 +75,10 @@ foreach (var entry in nextWords)
 }
 */
 
+// The underscore marks the cursor position.
+MeasureAutocomplete("_");
+MeasureAutocomplete(" _ ");
+MeasureAutocomplete("XZZZZZZZZZZZZZZZZZZZY _ XZZZZZZZZZZZZZZZZZZZZZZZY");
 MeasureAutocomplete("dok_");
 MeasureAutocomplete("_dok");
 MeasureAutocomplete("_Dok");
@@ -82,6 +86,7 @@ MeasureAutocomplete("Dokumento _");
 MeasureAutocomplete("Dokumento Nr_");
 MeasureAutocomplete("PREKĖS Nr_");
 MeasureAutocomplete("PREKĖS N_");
+MeasureAutocomplete("asdasdsda PREKĖS N_ aįėęįšėęšėwq");
 
 void Autocomplete(string text)
 {
@@ -114,6 +119,7 @@ void Autocomplete(string text)
         completions = completions.Concat(suggestionTrie.StartsWith(currentWord.ToLowerInvariant()).Select(x => x + " (based on the previous word)"));
     }
     completions = completions.Concat(trie.StartsWith(currentWord.ToLowerInvariant()).Select(x => x + " (based on the current word)"));
+
     Console.WriteLine($" (found {completions.Count()} completions):");
     int maxCompletions = 5;
     foreach (string completion in completions.Take(maxCompletions))
