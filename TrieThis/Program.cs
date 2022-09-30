@@ -82,6 +82,8 @@ MeasureAutocomplete("XZZZZZZZZZZZZZZZZZZZY _ XZZZZZZZZZZZZZZZZZZZZZZZY");
 MeasureAutocomplete("dok_");
 MeasureAutocomplete("_dok");
 MeasureAutocomplete("_Dok");
+MeasureAutocomplete("Cutting onions on iPad_.");
+MeasureAutocomplete("Cutting onions ON iPad_.");
 MeasureAutocomplete("Dokumento _");
 MeasureAutocomplete("Dokumento Nr_");
 MeasureAutocomplete("PREKĖS Nr_");
